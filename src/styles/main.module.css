@@ -1,0 +1,224 @@
+@import url("../color.css");
+
+.main-container {
+  /* width: calc(100vw - 400px); */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary-color);
+}
+
+.main-container header {
+  width: 100%;
+  height: 2.5rem;
+  padding: 5px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color-black);
+}
+
+.main-container .message-container {
+  /* position: absolute; */
+  height: calc(100% - 2.5rem - 10px - 3rem);
+}
+
+.main-container .message-container ul {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-container .message-container ul::-webkit-scrollbar {
+  display: none;
+}
+
+.main-container .message-container ul li {
+  display: inline-block;
+  width: 100%;
+}
+
+.main-container footer {
+  position: absolute;
+  bottom: 1rem;
+  width: calc(100% - 3rem);
+  /* height: 3rem; */
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container footer .footer {
+  width: 90%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.main-container footer .footer .message-box {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  background-color: var(--primary-color);
+  background-color: transparent;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.506) 0px 3px 6px, rgba(0, 0, 0, 0.498) 0px 3px 6px;
+}
+
+.main-container footer .message-box svg {
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.main-container footer .message-box svg path {
+  stroke: var(--icon-dark-color);
+}
+
+.main-container footer .message-box svg:first-child {
+  margin-left: 10px;
+}
+.main-container footer .message-box svg:last-child {
+  margin-right: 10px;
+  padding-left: 5px;
+}
+
+.main-container footer .message-box form {
+  width: 100%;
+}
+
+.main-container footer .message-box textarea {
+  background-color: transparent;
+  width: calc(100% - 1.25rem);
+  border: 0;
+  outline: none;
+  min-height: 2.3rem;
+  max-height: 10rem;
+  overflow-y: auto;
+  padding: 5px 10px;
+  color: #949494;
+  font-weight: 600;
+  resize: none;
+}
+
+.main-container footer .message-box textarea::-webkit-scrollbar {
+  width: 3px;
+}
+
+.main-container footer .message-box textarea::-webkit-scrollbar-thumb {
+  background-color: var(--icon-dark-color);
+  border-radius: 10px;
+}
+
+.main-container footer .message-box textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.main-container .footer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.main-container footer .message-box textarea::placeholder {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--placeholder-color);
+}
+
+.main-container footer .footer .mic-icon {
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.506) 0px 3px 6px, rgba(0, 0, 0, 0.498) 0px 3px 6px;
+  cursor: pointer;
+}
+
+.main-container footer .footer .mic-icon:hover {
+  background-color: #e9e9e9;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 6px, rgba(0, 0, 0, 0.33) 0px 3px 6px;
+}
+
+.main-container .footer .emoji-picker {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 0;
+}
+
+.main-container .profile-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.main-container .profile-image img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.main-container .name-state h4,
+.main-container .name-state p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  cursor: default;
+}
+
+.main-container .name-state p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  /* color: var(--placeholder-color); */
+  color: var(--online-color);
+}
+
+.main-container header .header-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.main-container header .header-icons div {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+
+.main-container header .header-icons div svg path {
+  stroke: var(--icon-dark-color);
+  fill: var(--icon-dark-color);
+}
+
+.main-container header .header-icons div:hover {
+  background-color: #f0f0f0;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 6px, rgba(0, 0, 0, 0.33) 0px 3px 6px;
+}

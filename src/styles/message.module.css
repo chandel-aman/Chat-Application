@@ -1,0 +1,133 @@
+@import url("../color.css");
+
+.list:hover .textBox .react::after {
+  content: url("../assets/images/emoji-happy.svg");
+  position: absolute;
+  right: -2rem;
+  top: calc(50% - 10%);
+  height: min-content;
+  fill: #757575;
+  cursor: pointer;
+  height: 18px;
+  width: min-content;
+}
+
+.list:hover .textBox.self .react::after {
+  left: -2rem;
+  top: calc(50% - 0.5rem);
+}
+
+.first-message {
+  margin-top: 1rem;
+}
+
+.textBox {
+  max-width: 60%;
+  background-color: var(--received-color);
+  margin-bottom: 1.5rem;
+  padding: 10px 45px 15px 10px;
+  border-radius: 0px 10px 10px 10px;
+  float: left;
+  position: relative;
+  color: var(--text-color-black);
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+}
+.textBox:not(.self) {
+  margin-left: 10px;
+}
+
+.textBox.self {
+  border-radius: 10px 10px 0 10px;
+  float: right;
+  background-color: var(--send-color);
+  margin-right: 10px;
+  color: var(--text-color-white);
+}
+
+.textBox .senderName {
+  margin: 0;
+  padding: 0;
+  color: #7c7c7c;
+}
+
+.textBox .text {
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  word-wrap: break-word;
+}
+
+.textBox .msg-footer {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
+
+.textBox .msg-footer .time {
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: var(--text-color-black);
+  margin-left: 5px;
+}
+
+.textBox .msg-footer svg {
+  width: 11px;
+  height: auto;
+}
+
+.textBox .msg-footer svg path {
+  fill: var(--text-color-black);
+}
+
+.textBox .msg-footer.read svg path {
+  /* fill: rgb(68, 87, 255); */
+  fill: #ff9d00;
+}
+
+.reaction-container {
+  background-color: var(--accent-color);
+  width: max-content;
+  height: min-content;
+  padding: 5px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: calc(50% - 1rem);
+  right: -13rem;
+}
+
+.reaction-container.self {
+  left: -13rem;
+}
+
+.reaction-container span {
+  cursor: pointer;
+}
+
+.reaction {
+  background-color: #aa9b8e;
+  width: min-content;
+  max-width: 4.1rem;
+  height: min-content;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 4px, rgba(0, 0, 0, 0.33) 0px 3px 4px;
+  border-radius: 20px;
+  padding: 0px 2px;
+  position: absolute;
+  bottom: -1.1rem;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reaction.self {
+  right: 0.5rem;
+}
+
+.add-icon {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0 5px;
+  background-color: #7e7e7e;
+}

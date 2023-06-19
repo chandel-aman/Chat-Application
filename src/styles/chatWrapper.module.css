@@ -1,0 +1,96 @@
+@import url("../color.css");
+
+.chat {
+  /* background-color: red; */
+  width: 100%;
+  /* height: 4rem; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.chat.active {
+  background: -webkit-linear-gradient(
+    to right,
+    var(--gradient-color),
+    transparent
+  );
+  background: linear-gradient(
+    to right,
+    var(--gradient-color),
+    transparent
+  );
+}
+
+.chat-profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.chat-profile.online::after {
+  content: "";
+  position: absolute;
+  left: 2.15rem;
+  bottom: 0;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(50, 214, 50);
+  border-radius: 50%;
+  border: 2px solid #f1f4f0;
+}
+
+.chat-profile img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.chat-details {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.chat-details div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-details div h5,
+.chat-details span {
+  margin: 0;
+  padding: 0;
+}
+
+.chat-details div span,
+.chat-details .chat-preview {
+  font-size: 0.65rem;
+}
+
+.chat-details .chat-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-details .message-count {
+  background-color: var(--send-color);
+  text-align: center;
+  border-radius: 50%;
+  height: 0.9rem;
+  width: 0.9rem;
+  font-size: 9px;
+  font-weight: 900;
+  color: #fff;
+}

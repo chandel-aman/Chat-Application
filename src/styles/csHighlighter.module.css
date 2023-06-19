@@ -1,0 +1,90 @@
+@import url("../color.css");
+
+.container {
+  width: 23rem;
+  /* max-height: 30rem; */
+  max-width: 23rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-radius: 10px;
+  /* margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 0; */
+  background-color: #282c34;
+}
+
+.container .container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0.5rem;
+  background-color: #3e4044;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--icon-dark-color);
+}
+
+.container .container-header .circles{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.container .container-header .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.container .container-header .circle.one{
+    background-color: #fff;
+}
+.container .container-header .circle.two{
+    background-color: #d44242;
+}
+.container .container-header .circle.three{
+    background-color: #a9bd50;
+}
+
+.container .container-header .copy {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.copy.copied svg {
+  width: 13px;
+}
+.copy.copy.copied svg path {
+  stroke: #fff;
+  fill: #fff;
+}
+.copy.copied span {
+  color: #fff;
+  font-weight: 300;
+}
+
+.copy svg {
+  width: 12px;
+  height: min-content;
+}
+
+.copy svg g path {
+  stroke: var(--icon-dark-color);
+  fill: var(--icon-dark-color);
+}
+
+.container .container-footer {
+  width: 100%;
+  background-color: red;
+}
+
+.container .container-footer span {
+  float: right;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0 10px 4px 0;
+  cursor: pointer;
+}

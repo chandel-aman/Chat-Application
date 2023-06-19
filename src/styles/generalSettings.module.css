@@ -1,0 +1,65 @@
+.general-settings-container{
+    /* background-color: red; */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.general-settings-container h1,
+.general-settings-container h2{
+    margin: 0;
+    color: #fff;
+}
+
+.general-settings-container h1{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.general-settings-container h2{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.general-settings-container .gs-form select{
+    outline: none;
+    border: none;
+    width: 60%;
+    height: 2rem;
+    border-radius: 4px;
+    background-color: #ffffff25;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+}
+
+.general-settings-container .gs-form select:focus{
+    background-color: #ffffff25;
+    color: #fff;
+}
+
+.general-settings-container hr{
+    border: 0;
+    border-top: 2px solid #ffffff25;
+    margin: 2rem 0;
+}
+
+.general-settings-container .gs-logout-btn{
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    height: 2rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #ffffff25;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.general-settings-container .gs-logout-btn:hover{
+    background-color: #ffffff30;
+}

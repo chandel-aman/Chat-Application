@@ -1,0 +1,144 @@
+@import url("../color.css");
+
+.settings-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  height: 0;
+  width: 32rem;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  z-index: 11;
+  box-shadow: rgba(0, 0, 0, 0.506) 0px 3px 6px, rgba(0, 0, 0, 0.498) 0px 3px 6px;
+  transition: height 0.35s ease-in-out;
+}
+
+.settings-container.show {
+  height: 30rem;
+}
+
+.settings-container .settings-menu,
+.settings-container .settings-details {
+  position: relative;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-container .settings-menu {
+  height: 100%;
+  width: 40%;
+  background-color: inherit;
+  border-radius: 8px 0 0 8px;
+  border-right: 2px solid #2b2a4aaf;
+}
+
+.settings-container .settings-menu .settings-menu-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item
+  svg {
+  width: 20px;
+  height: 20px;
+}
+
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item
+  svg
+  path {
+  stroke: var(--icon-light-color);
+}
+
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 4px 0 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item:hover,
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item.active {
+  background: -webkit-linear-gradient(
+    to right,
+    var(--gradient-color),
+    transparent
+  );
+  background: linear-gradient(to right, var(--gradient-color), transparent);
+  color: #fff;
+}
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item.active
+  svg
+  path {
+  stroke: #fff;
+}
+
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.3px;
+  transform: translate(0, -50%);
+  height: 16px;
+  width: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.settings-container
+  .settings-menu
+  .settings-menu-list
+  .settings-menu-list-item.profile {
+  position: absolute;
+  bottom: 0;
+}
+
+.settings-container .settings-details {
+  height: 100%;
+  width: 60%;
+  border-radius: 0 8px 8px 0;
+  background: -webkit-linear-gradient(
+    to right,
+    transparent,
+    var(--gradient-color)
+  );
+  background: linear-gradient(to right, transparent, var(--gradient-color));
+}

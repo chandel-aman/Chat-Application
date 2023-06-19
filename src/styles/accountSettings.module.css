@@ -1,0 +1,88 @@
+@import url("../color.css");
+
+.account-settings-container {
+  /* background-color: red; */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.account-settings-container h1,
+.account-settings-container h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.account-settings-container h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.account-settings-container h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.account-settings-container .as-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-settings-container .as-form .as-form-input {
+  appearance: none;
+  margin: 0;
+  position: relative;
+}
+
+.account-settings-container .as-form .as-form-input:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 3rem;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid var(--text-color-black);
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.account-settings-container .as-form .as-form-input::after {
+  position: absolute;
+  content: "";
+  top: calc(1.5rem / 2 - 8px);
+  left: 4px;
+  height: 1rem;
+  width: 1rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: var(--text-color-black);
+  z-index: 1;
+  transition: left 0.25s ease-out;
+}
+
+.account-settings-container .as-form .as-form-input.true::after {
+  top: calc(1.5rem / 2 - 8px);
+  left: calc(2rem - 4px);
+  background-color: var(--text-color-white);
+}
+
+.account-settings-container .as-form .as-form-input.true::before{
+    border-color: var(--text-color-white);
+}
+
+.account-settings-container .as-form .as-form-input-text {
+  margin-left: 3.5rem;
+}
+.account-settings-container .as-form .as-form-input-text.true {
+  color: var(--text-color-white);
+}
+
+/* .warning-container{
+    height: 20rem;
+    width: 20rem;
+    background-color: red;
+} */

@@ -1,0 +1,87 @@
+@import url("../color.css");
+
+:root {
+  --width: 40px;
+  --heigth: 40px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  border-radius: 50%;
+  width: var(--width);
+  height: var(--heigth);
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icons {
+  box-sizing: border-box;
+  width: var(--width);
+  height: var(--heigth);
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icons.chat svg {
+  transform: translate(10%, 20%);
+}
+
+.icons.chat svg circle {
+  fill: var(--gradient-color);
+}
+
+.icons:hover:not(.icons.settings, .icons.active) {
+  background-color: var(--accent-color);
+}
+
+.icons:not(.active).chat:hover svg circle {
+  fill: var(--gradient-color);
+}
+
+.icons.contact svg {
+  transform: translate(13%, 11%);
+}
+
+.icons.active {
+  /* background-color: var(--accent-color); */
+  background-color: #f0f0f0;
+}
+
+.icons.settings {
+}
+
+.icons.settings svg {
+  height: 30px;
+  width: 30px;
+}
+
+.icons.settings svg path {
+  fill: #f0f0f0;
+}
+
+.icons.active svg,
+.icons.active svg path {
+  fill: var(--gradient-color);
+}
+
+.icons.active svg circle {
+  fill: #f0f0f0;
+}

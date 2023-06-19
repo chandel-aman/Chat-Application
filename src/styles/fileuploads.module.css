@@ -1,0 +1,219 @@
+@import url("../color.css");
+
+.upload-container {
+  position: absolute;
+  box-sizing: border-box;
+  height: 0;
+  width: 3rem;
+  bottom: 110%;
+  left: 0;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2px;
+  box-shadow: rgba(0, 0, 0, 0.506) 0px 3px 6px, rgba(0, 0, 0, 0.498) 0px 3px 6px;
+  overflow: hidden;
+  z-index: 11;
+  transition: height 350ms ease-out;
+}
+
+.upload-container.show {
+  height: 10.1rem;
+  transition: height 350ms ease-in-out;
+}
+
+.upload-container div {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.upload-container div:hover {
+  background-color: #1c1c2d;
+}
+
+.upload-container div svg path {
+  fill: var(--icon-dark-color);
+}
+
+.upload-container div:nth-child(1):hover svg path {
+  fill: rgb(255, 69, 69);
+}
+.upload-container div:nth-child(2):hover svg path {
+  fill: rgb(62, 179, 66);
+}
+.upload-container div:nth-child(3):hover svg path {
+  fill: var(--send-color);
+}
+.upload-container div:nth-child(4):hover svg path {
+  fill: rgb(187, 187, 59);
+}
+
+.preview-container {
+  position: absolute;
+  box-sizing: border-box;
+  max-height: 32rem;
+  max-width: 70%;
+  min-height: 15rem;
+  min-width: 20rem;
+  left: 0;
+  bottom: 110%;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.506) 0px 3px 6px, rgba(0, 0, 0, 0.498) 0px 3px 6px;
+  z-index: 11;
+}
+
+.preview-container .preview-footer {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+}
+
+.preview-container .preview-footer .smallPreview {
+  width: min-content;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding-bottom: 5px;
+}
+
+/* Customize the scrollbar */
+.preview-container .preview-footer .smallPreview::-webkit-scrollbar {
+  height: 1.5px;
+  background-color: transparent;
+}
+
+.preview-container .preview-footer .smallPreview::-webkit-scrollbar-thumb {
+  background-color: var(--icon-light-color);
+  border-radius: 6px;
+}
+
+.preview-container .preview-footer .smallPreview .previewToggle img,
+.preview-container .preview-footer .smallPreview .previewToggle video {
+  width: 2.5rem;
+  /* height: 2.5rem; */
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.preview-container .preview-footer span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preview-container .preview-footer span svg {
+  width: 30px;
+  height: 30px;
+}
+.preview-container .preview-footer span:last-child {
+  float: right;
+}
+
+.preview-container .preview-footer span:first-child svg path {
+  fill: var(--icon-dark-color);
+}
+.preview-container .preview-footer span:first-child:hover svg path {
+  fill: var(--icon-light-color);
+}
+
+.preview-container .preview-footer span:last-child svg path {
+  fill: var(--send-color);
+}
+
+.preview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview img {
+  max-width: 70%;
+}
+
+.preview video {
+  max-width: 70%;
+}
+
+.preview .audioFilePreview {
+  cursor: pointer;
+  width: min-content;
+}
+
+.smallPreview .previewToggle .audioFilePreview svg path {
+  fill: var(--icon-dark-color) !important;
+}
+.smallPreview .previewToggle .audioFilePreview:hover svg path {
+  fill: var(--icon-light-color) !important;
+}
+
+.audioPreviewTemplate {
+  position: relative;
+  width: 11rem;
+  height: 12rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-color: #ffffffe0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.audioPreview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audioPreview h3 {
+  position: relative;
+  margin: 1rem;
+  font-size: 1rem;
+  color: var(--text-black-white);
+}
+
+.audioPreviewTemplate h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  color: #515151;
+}
+
+.audioPreviewTemplate .APTIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.audioPreviewTemplate .APTIcon svg {
+  width: 4rem;
+  height: 4rem;
+}

@@ -1,0 +1,76 @@
+.newContact-container {
+  /* background-color: yellow; */
+}
+
+.newContact-container .newContact-header {
+  margin: 0;
+}
+
+.newContact-container .newContact-form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.8rem; */
+}
+
+.newContact-container .newContact-form input {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  height: 20px;
+  background-color: #ffffff0f;
+  color: var(--text-color-white);
+}
+.newContact-container .newContact-form input + div {
+  margin-bottom: 8px;
+}
+.newContact-container .newContact-form label {
+  margin-top: 10px;
+}
+
+.newContact-container
+  .newContact-form
+  input[type="number"]::-webkit-inner-spin-button,
+.newContact-container
+  .newContact-form
+  input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.newContact-container .newContact-form input:focus {
+  border-bottom: 2px solid var(--text-color-white);
+}
+
+.newContact-container .newContact-form input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.newContact-container .newContact-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 4px;
+}
+.newContact-container .newContact-buttons button {
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+  height: 1.5rem;
+
+}
+
+.newContact-container .newContact-buttons button[data="ok"] {
+  background-color: var(--send-color);
+}
+.newContact-container .newContact-buttons button[data="cancel"] {
+  background-color: #b5b5b5;
+}
+.newContact-container .newContact-buttons button[data="ok"]:hover {
+  background-color: #5d44c2;
+}
+.newContact-container .newContact-buttons button[data="cancel"]:hover {
+  background-color: #cecece;
+}

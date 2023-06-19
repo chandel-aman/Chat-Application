@@ -1,0 +1,75 @@
+:root {
+  --primary-color: #12121d;
+  --gradient-color: #3c1d63;
+  --secondary-color: #19182b;
+  --received-color: #19182b;
+  --send-color: #4e38a2;
+  --accent-color: #793e79;
+  --placeholder-color: #afafaf;
+  --text-color-white: #f1f4f0;
+  --text-color-black: #a6a3b3;
+  --shadow-color: #a6a3b3;
+  --icon-light-color: #b9b9b9;
+  --icon-dark-color: #757575;
+  --online-color: #2486bb;
+}
+
+/* 
+background: #373b44;
+background: -webkit-linear-gradient(
+  to right,
+  #4286f4,
+  #373b44
+);
+background: linear-gradient(
+  to right,
+  #4286f4,
+  #373b44
+);
+
+2
+
+background: #ada996;
+background: -webkit-linear-gradient(
+  to top,
+  #eaeaea,
+  #dbdbdb,
+  #f2f2f2,
+  #ada996
+);
+background: linear-gradient(
+  to top,
+  #eaeaea,
+  #dbdbdb,
+  #f2f2f2,
+  #ada996
+);
+
+3
+
+background: #d9a7c7;
+background: -webkit-linear-gradient(
+  to left,
+  #fffcdc,
+  #d9a7c7
+);
+background: linear-gradient(
+  to left,
+  #fffcdc,
+  #d9a7c7
+);
+
+4
+
+background: #43c6ac; /
+background: -webkit-linear-gradient(
+  to bottom,
+  #191654,
+  #43c6ac
+);
+background: linear-gradient(
+  to bottom,
+  #191654,
+  #43c6ac
+);
+*/
