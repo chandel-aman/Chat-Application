@@ -89,7 +89,7 @@ const Login = () => {
                 }
               } catch (error) {
                 console.log(error.message);
-                toast.error(error.message);
+                toast.error(error.message || error.error);
               }
             }}
           >

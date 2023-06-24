@@ -34,7 +34,7 @@ const DUMMY_STATUS = [
 
 const Chats = () => {
   //state variable
-  const [chatName, setChatName] = useState([]);
+  const [showChats, setShowChats] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   //extracting from chat context
@@ -55,20 +55,30 @@ const Chats = () => {
 
   //function to handle change in the search bar
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-    if (chats && chats.length > 0)
-      setFilteredChats(
-        chats.filter((chat, index) =>
-          chatName[index]
-            .toLowerCase()
-            .includes(event.target.value.toLowerCase())
-        )
-      );
+    const query = event.target.value;
+    query.trim();
+    if (query) {
+      setSearchQuery(query);
+      if (chats && chats.length > 0)
+        setFilteredChats(
+          chats.filter((chat, index) =>
+            chat.conv_name.toLowerCase().includes(query.toLowerCase())
+          )
+        );
+    } else {
+      setSearchQuery("");
+      setFilteredChats([]);
+    }
   };
 
   useEffect(() => {
-    console.log(filteredChats);
-  }, [filteredChats]);
+    if (filteredChats.length === 0 && !searchQuery && chats) {
+      setShowChats(chats);
+    } else {
+      setShowChats(filteredChats);
+    }
+  }, [filteredChats, chats]);
+  console.log(showChats);
 
   //function to get the name of the chat
   const chatNameHandler = () => {
@@ -80,13 +90,13 @@ const Chats = () => {
               return contact.phone === participant.phone;
             });
             if (matchingContact) {
-              setChatName((prev) => [...prev, participant.username]);
+              chat.conv_name = participant.username;
             } else if (participant.phone !== phone) {
-              setChatName((prev) => [...prev, participant.phone]);
+              chat.conv_name = participant.phone;
             }
           });
         } else {
-          setChatName((prev) => [...prev, chat.name]);
+          chat.conv_name = chat.name;
         }
       });
     }
@@ -95,9 +105,7 @@ const Chats = () => {
   useEffect(() => {
     chatNameHandler();
   }, [chats, contacts]);
-  // console.log(online);
-  //return
-  
+
   return (
     <div className={classes["chats-container"]}>
       <div className={classes["search-box"]}>
@@ -121,27 +129,29 @@ const Chats = () => {
 
       <h3>Chats</h3>
       <ul>
-        {chats &&
-          chats?.length > 0 &&
-          chats.map((conversation, index) => (
-            <ChatWrapper
-              uniqueKey={conversation._id}
-              onClick={() => openConversationHandler(conversation._id)}
-              active={activeConversation === conversation._id}
-              imgSrc={profileImage}
-              chatName={chatName[index]}
-              lastMessagePreview="Hello! Testing..."
-              time="20:41"
-              messageCount={3}
-              online={online.some(
-                (user) =>
-                  conversation.participants.some(
-                    (participant) =>
-                      participant._id === user.userId &&
-                      participant._id !== userId
-                  ) && conversation.participants.length <= 2
-              )}
-            />
+        {showChats &&
+          showChats?.length > 0 &&
+          showChats.map((conversation, index) => (
+            <>{console.log(conversation.conv_name)}
+              <ChatWrapper
+                uniqueKey={conversation._id}
+                onClick={() => openConversationHandler(conversation._id)}
+                active={activeConversation === conversation._id}
+                imgSrc={profileImage}
+                chatName={conversation.conv_name}
+                lastMessagePreview="Hello! Testing..."
+                time="20:41"
+                messageCount={3}
+                online={online.some(
+                  (user) =>
+                    conversation.participants.some(
+                      (participant) =>
+                        participant._id === user.userId &&
+                        participant._id !== userId
+                    ) && conversation.participants.length <= 2
+                )}
+              />
+            </>
           ))}
         {(!searchQuery && chats?.length === 0) ||
           (searchQuery && filteredChats?.length === 0 && (

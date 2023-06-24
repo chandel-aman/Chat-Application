@@ -18,6 +18,7 @@ import SignUp from "./pages/auth/Signup";
 import OTP from "./pages/auth/Otp";
 import Dashboard from "./components/dashboard/Dashboad";
 import CSHighlighter from "./shared/UI/codeSyntaxHighlighter/CSHighlighter";
+import NoPageFound from "./shared/UI/404";
 
 const App = () => {
   //extracting from custom hooks
@@ -94,15 +95,15 @@ const App = () => {
         }}
       >
         <Routes>
-          {/* <Route path="/highlighter" element={<CSHighlighter />} /> */}
           {!token && (
             <>
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              {!is2FA && <Route path="/enter-otp" element={<OTP />} />}
+              {is2FA && <Route path="/enter-otp" element={<OTP />} />}
             </>
           )}
           {token && <Route path="/" element={dashboard} />}
+          <Route path="*" element={<NoPageFound />} />
         </Routes>
       </AuthContext.Provider>
     </div>

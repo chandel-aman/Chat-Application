@@ -45,22 +45,26 @@ const OTP = () => {
 
   const otpSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log(otp, state.email);
-    // try {
-    //   const responseData = await sendRequest(
-    //     "http://localhost:8000/api/user/login/2FA-verify",
-    //     "POST",
-    //     JSON.stringify(values),
-    //     { "Content-Type": "application/json" }
-    //   );
-    //   const { userId, token, username, phone } = await responseData;
-    //   authCtx.login(userId, token, username, phone);
-    //   console.log(username + " logged in!");
-    //   toast("Logged in as", username);
-    // } catch (error) {
-    //   console.log(error.message);
-    //   toast.error(error.message);
-    // }
+    // console.log(otp, state.email);
+    const values = {
+      email: state.email,
+      otp: otp,
+    };
+    try {
+      const responseData = await sendRequest(
+        "http://localhost:8000/api/user/login/verify-otp",
+        "POST",
+        JSON.stringify(values),
+        { "Content-Type": "application/json" }
+      );
+      const { userId, token, username, phone } = await responseData;
+      authCtx.login(userId, token, username, phone);
+      console.log(username + " logged in!");
+      toast("Logged in as", username);
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   };
 
   return (
