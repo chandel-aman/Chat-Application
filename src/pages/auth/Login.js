@@ -71,7 +71,7 @@ const Login = () => {
             onSubmit={async (values) => {
               try {
                 const responseData = await sendRequest(
-                  "http://localhost:8000/api/user/login",
+                  `${process.env.REACT_APP_BACKEND_URL}/api/user/login`,
                   "POST",
                   JSON.stringify(values),
                   { "Content-Type": "application/json" }

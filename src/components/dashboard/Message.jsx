@@ -134,7 +134,7 @@ const MessageWrapper = forwardRef((props, ref) => {
 
     try {
       // const responseData = sendRequest(
-      //   `http://localhost:8000/api/chats/${authCtx.userId}/${conversationId}/addReaction`,
+      //   `${process.env.REACT_APP_BACKEND_URL}/api/chats/${authCtx.userId}/${conversationId}/addReaction`,
       //   "POST",
       //   JSON.stringify({
       //     reaction: value,

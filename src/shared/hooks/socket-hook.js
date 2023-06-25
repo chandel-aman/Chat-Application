@@ -19,7 +19,7 @@ const useSocket = () => {
 
   //useEffect
   useEffect(() => {
-    const newSocket = io("ws://localhost:5000", {
+    const newSocket = io(process.env.REACT_APP_SOCKET_URL, {
       query: {
         userId: data.userId,
         connectedUsers: JSON.stringify(userIds),

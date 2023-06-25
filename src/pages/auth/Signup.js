@@ -76,7 +76,7 @@ const SignUp = () => {
               console.log(values);
               try {
                 const responseData = await sendRequest(
-                  "http://localhost:8000/api/user/signup",
+                  `${process.env.REACT_APP_BACKEND_URL}/api/user/signup`,
                   "POST",
                   JSON.stringify(values),
                   { "Content-Type": "application/json" }

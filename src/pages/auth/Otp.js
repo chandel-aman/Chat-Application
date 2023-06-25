@@ -52,7 +52,7 @@ const OTP = () => {
     };
     try {
       const responseData = await sendRequest(
-        "http://localhost:8000/api/user/login/verify-otp",
+        `${process.env.REACT_APP_BACKEND_URL}/api/user/login/verify-otp`,
         "POST",
         JSON.stringify(values),
         { "Content-Type": "application/json" }

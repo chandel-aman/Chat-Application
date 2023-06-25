@@ -111,7 +111,7 @@ const NewGroup = (props) => {
     if (groupData)
       try {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/chats/${userId}/createGroup`,
+          `${process.env.REACT_APP_BACKEND_URL}/api/chats/${userId}/createGroup`,
           "POST",
           JSON.stringify(groupData),
           { "Content-Type": "application/json" }

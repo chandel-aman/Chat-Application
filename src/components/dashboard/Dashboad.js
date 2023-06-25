@@ -39,7 +39,7 @@ const Dashboard = (props) => {
       if (ctx.userId)
         try {
           const responseData = await sendRequest(
-            `http://localhost:8000/api/user/${ctx.userId}/get-contacts`
+            `${process.env.REACT_APP_BACKEND_URL}/api/user/${ctx.userId}/get-contacts`
           );
           // console.log(responseData.contacts);
           contactsCtx.handleContacts(responseData.contacts);
@@ -55,7 +55,7 @@ const Dashboard = (props) => {
       if (ctx.userId)
         try {
           const responseData = await sendRequest(
-            `http://localhost:8000/api/user/${ctx.userId}/chats`
+            `${process.env.REACT_APP_BACKEND_URL}/api/user/${ctx.userId}/chats`
           );
           // console.log(responseData.chats);
           handleChats(responseData.chats);

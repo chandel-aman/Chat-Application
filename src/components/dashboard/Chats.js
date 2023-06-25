@@ -49,7 +49,6 @@ const Chats = () => {
 
   //function to handle click event on conversation to open the respective chat
   const openConversationHandler = (chatId) => {
-    console.log(chatId);
     handleActiveConversation(chatId);
   };
 
@@ -78,7 +77,6 @@ const Chats = () => {
       setShowChats(filteredChats);
     }
   }, [filteredChats, chats]);
-  console.log(showChats);
 
   //function to get the name of the chat
   const chatNameHandler = () => {
@@ -132,26 +130,24 @@ const Chats = () => {
         {showChats &&
           showChats?.length > 0 &&
           showChats.map((conversation, index) => (
-            <>{console.log(conversation.conv_name)}
-              <ChatWrapper
-                uniqueKey={conversation._id}
-                onClick={() => openConversationHandler(conversation._id)}
-                active={activeConversation === conversation._id}
-                imgSrc={profileImage}
-                chatName={conversation.conv_name}
-                lastMessagePreview="Hello! Testing..."
-                time="20:41"
-                messageCount={3}
-                online={online.some(
-                  (user) =>
-                    conversation.participants.some(
-                      (participant) =>
-                        participant._id === user.userId &&
-                        participant._id !== userId
-                    ) && conversation.participants.length <= 2
-                )}
-              />
-            </>
+            <ChatWrapper
+              uniqueKey={conversation._id}
+              onClick={() => openConversationHandler(conversation._id)}
+              active={activeConversation === conversation._id}
+              imgSrc={profileImage}
+              chatName={conversation.conv_name}
+              lastMessagePreview="Hello! Testing..."
+              time="20:41"
+              messageCount={3}
+              online={online.some(
+                (user) =>
+                  conversation.participants.some(
+                    (participant) =>
+                      participant._id === user.userId &&
+                      participant._id !== userId
+                  ) && conversation.participants.length <= 2
+              )}
+            />
           ))}
         {(!searchQuery && chats?.length === 0) ||
           (searchQuery && filteredChats?.length === 0 && (

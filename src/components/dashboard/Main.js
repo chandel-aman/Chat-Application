@@ -216,7 +216,7 @@ const Main = (props) => {
     if (conversationId) {
       const fetchMessages = async () => {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/chats/${authCtx.userId}/${conversationId}`
+          `${process.env.REACT_APP_BACKEND_URL}/api/chats/${authCtx.userId}/${conversationId}`
         );
         // console.log(responseData.conversation);
         setMessages(responseData.conversation.messages.message);
@@ -258,7 +258,7 @@ const Main = (props) => {
       console.log(conversationId);
       try {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/chats/${authCtx.userId}/${conversationId}/sendMsg`,
+          `${process.env.REACT_APP_BACKEND_URL}/api/chats/${authCtx.userId}/${conversationId}/sendMsg`,
           "POST",
           JSON.stringify(message),
           { "Content-Type": "application/json" }
@@ -271,7 +271,7 @@ const Main = (props) => {
       //if we do not have a conversation id than create a new conversation
       try {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/chats/${authCtx.userId}/newConv`,
+          `${process.env.REACT_APP_BACKEND_URL}/api/chats/${authCtx.userId}/newConv`,
           "POST",
           JSON.stringify({ message, participants }),
           { "Content-Type": "application/json" }

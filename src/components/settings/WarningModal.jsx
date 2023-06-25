@@ -69,7 +69,7 @@ const WarningModal = (props) => {
             console.log(values);
             // try {
             //   const responseData = await sendRequest(
-            //     `http://localhost:8000/api/user/${ctx.userId}/add-new-contact`,
+            //     `${process.env.REACT_APP_BACKEND_URL}/api/user/${ctx.userId}/add-new-contact`,
             //     "POST",
             //     JSON.stringify(values),
             //     { "Content-Type": "application/json" }
